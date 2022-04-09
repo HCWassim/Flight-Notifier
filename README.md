@@ -4,7 +4,7 @@ Short Program using Transavia's API to notify via email an user waiting for a fl
 ## Algorithm returning a list which contains all the days between the day of the function call and an asked limit date:
 These are Python functions which can be linked together to get a full list or separately to get different informations according to different parameters.
 For a fully functional program you need to work with the library `datetime`
-```
+```python
 # Function checking whether it is a leap year or not:
 def bissextile():
     year = int(datetime.today().strftime('%Y'))
@@ -13,7 +13,7 @@ def bissextile():
             return 1
     return 0
 ```
-```
+```python
 # Function returning the number of days in a month according to the given month in parameter:
 def lenMonth(m):
     dayArray = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -22,7 +22,7 @@ def lenMonth(m):
     else:
         return dayArray[m-1]
 ```
-```
+```python
 # Function checking if the program went through all the days between the day of the request and the limit date:
 def checkYear(val,month,day):
     ar = val[len(val)-1].split("-")
@@ -32,7 +32,7 @@ def checkYear(val,month,day):
     else:
         return checkMonth(val)
 ```
-```
+```python
 # function checking if the program went through all the days of one month :
 def checkMonth(val):
     ar = val[len(val)-1].split("-")
@@ -41,7 +41,7 @@ def checkMonth(val):
     else:
         return newDay(val)
 ```
-```
+```python
 # function adding a new day to the final day:
 def newDay(val,bool=False):
     ar = val[len(val)-1].split("-")
